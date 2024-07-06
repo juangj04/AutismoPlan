@@ -1,0 +1,57 @@
+{% extends 'juego/botones.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core\css\secciones.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+
+</head>
+<body>
+    
+    <div class="seccion-registro ">
+        <div class="titulo-container">
+            <h1 class="titulo-form">AutismoPlan</h1>
+        </div>
+        
+    
+        <form class="formulario" id="form-registro" method="post" action="/registrar/">
+            {% csrf_token %}
+            <div class="inputs-container">
+                <label class="titulo-label" for="nombre">¿Como te llamas?</label>
+                <p class="instructivo-form">Aqui va tu nombre o tu apodo como prefieras!</p>
+                <input class="input" id="username" name="username" type="text" required>
+                
+            </div>
+            <div class="inputs-container" for="contraseña">
+                <label class="titulo-label" for="contraseñar">¿Cual es tu palabra favorita?</label>
+                <p class="instructivo-form">Aqui puedes poner cosas como el nombre de tu fruta favorita, caricatura favorita o color favorito!</p>
+                <input class="input" id="password" name="password" type="password" required>
+                
+            </div>
+            <div class="registrarse">
+                Ya estoy registrado quiero ir al <a data-seccion="seccionInicio" href="/accounts/login/" class="link-inicio" id="linkinicio">inicio</a>
+            </div>
+            {% if error %}
+                <p>{{error}}</p>
+            {% endif %}
+            <button type="submit" class="next-btn" data-seccion="seccionInicioJuego" id="continuar-btn"  >Continuar</button>
+        </form>
+        
+    </div>
+    
+    <script src="{% static 'core\js\script.js' %}"></script>
+    <script src="{% static 'core\js\music.js' %}"></script>
+    {% endblock %}
+</body>
+</html>
+
+

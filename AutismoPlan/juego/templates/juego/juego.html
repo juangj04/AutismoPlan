@@ -1,0 +1,417 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es-co">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core\css\style.css' %}">
+    <link rel="stylesheet" href="{% static 'core\css\estilosjuego.css' %}">
+    <link rel="stylesheet" href="{% static 'core\css\secciones.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="preloder">
+		<div class="loader"></div>
+	</div>
+    <div class="seccion-inicio" id="seccion-inicio">
+        
+        
+            
+    
+       <div class="juego">
+        <label class="boton-label" for="btn-menu">☰</label>
+        
+        
+       
+        <div class="contenedor">
+           
+        {% if buena %}
+            {{buena}}
+        {% endif %}
+        {% if guardado %}
+
+        {{guardado}}
+        {% endif %}
+       
+        <div class="cont-izq">
+            <p id="resultado"></p>
+            <p id="timer"></p>
+            <button id="start-pause" class="btn">Iniciar Juego</button>
+            <button id="btn-invisible" class="btn">Reiniciar Juego</button>
+        </div>
+        
+        <form id="formResultado" class="formResultado" action="/GuardarResultado/" method="post">
+            {% csrf_token %}
+            <input type="number" name="puntuacion" id="puntuacion">
+            <input type="text" name="estado" id="estadoo">
+            <button class="btn btn-save" type="submit">Guardar</button>
+
+        </form>
+        <button id="alternar-musica" class="boton-musica"></button>
+        <a class="home-link" href="/"><i class="fas fa-home"></i></a>
+        <a id="cerrar-sesion" class="logout-link" href="/signout/"><i class="fas fa-sign-out-alt"></i></a>
+    </div>
+       </div>
+
+       <div class="contenedorr" id="juego" style="display: none;">
+        <div id="kakak">
+            <div class="kjj">
+                <div class="">
+                    <img id="sofa-grande" class="item sala1" draggable="true"  src="{% static 'core/img/Sala/Sofa-grande.png' %}">
+                
+                </div>
+                <div class="" >
+                    <img id="mesa" class="item sala2 " draggable="true" src="{% static 'core/img/Sala/Mesa.png' %}">
+                
+                </div>
+            </div>
+            
+
+            <div class="kjj">
+                <div class="" >
+                    <img id="cuadro"  class="item sala3" draggable="true" src="{% static 'core/img/Sala/cuadro.png' %}">
+                
+                </div>
+                <div class="" >
+                    <img id="sofa"  class="item sala4" draggable="true"  src="{% static 'core/img/Sala/Sofa.png' %}">
+                
+                </div>
+            </div>
+           <div class="kjj">
+            <div class="" >
+                <img  class="item baño1" draggable="true"  src="{% static 'core/img/Baño/toilet.png' %}">
+            
+            </div>
+            <div class="" >
+                <img  class="item baño2" draggable="true" src="{% static 'core/img/Baño/Espejo.png' %}">
+            
+            </div>
+           </div>
+            <div class="kjj">
+                <div class="" >
+                    <img  class="item baño3" draggable="true" src="{% static 'core/img/Baño/Lavabo.png' %}">
+                
+                </div>
+                <div class="" >
+                    <img  class="item baño4" draggable="true" src="{% static 'core/img/Baño/toallero.png' %}">
+                
+                </div>
+            </div>
+            
+        
+            <div class="kjj">
+                <div class="" >
+                    <img  class="item hab1" id="armario" draggable="true" src="{% static 'core/img/Habitacion/armario.png' %}">
+                
+                </div>
+    
+                <div class="" >
+                    <img   class="item hab2" id="cama" draggable="true" src="{% static 'core/img/Habitacion/Cama.png' %}">
+                
+                </div>
+    
+            </div>
+            <div class="kjj">
+                <div class="" >
+                    <img   class="item hab3" id="mesita" draggable="true" src="{% static 'core/img/Habitacion/Mesita.png' %}">
+                
+                </div>
+    
+                <div class="" >
+                    <img   class="item hab4" id="lampara" draggable="true" src="{% static 'core/img/Habitacion/Lampara.png' %}">
+                
+                </div>
+            </div>
+
+            <div class="kjj">
+                <div class="" >
+                    <img   class="item coc1" id="nevera" draggable="true" src="{% static 'core/img/Cocina/Nevera.png' %}">
+                
+                </div>
+    
+                <div class="" >
+                    <img   class="item coc2" id="reloj" draggable="true" src="{% static 'core/img/Cocina/Reloj.png' %}">
+                
+                </div>
+            </div>
+            <div class="kjj">
+                <div class="" >
+                    <img   class="item coc3" id="tazon" draggable="true" src="{% static 'core/img/Cocina/Tazon.png' %}">
+                
+                </div>
+    
+                <div class="" >
+                    <img   class="item coc4" id="cereal" draggable="true" src="{% static 'core/img/Cocina/Cereal.png' %}">
+                
+                </div>
+            </div>
+           
+        
+       
+      
+    </div>
+    <div id="right">
+            <div class="right1">
+                <div id="contenedorsala">
+                    <div class="contenedorImagen" id="imagen1"></div>
+                    <div class="contenedorImagen" id="imagen2"></div>
+                    <div class="contenedorImagen" id="imagen3"></div>
+                    <div class="contenedorImagen" id="imagen4"></div>
+                </div>
+                <div id="contenedorbaño">
+                    <div class="contenedorImagen" id="imagen5"></div>
+                    <div class="contenedorImagen" id="imagen6"></div>
+                    <div class="contenedorImagen" id="imagen7"></div>
+                    <div class="contenedorImagen" id="imagen8"></div>
+                </div>
+               
+            </div>
+           <div class="right2">
+            <div id="contenedorhabitacion">
+                <div class="contenedorImagen" id="imagen9"></div>
+                <div class="contenedorImagen" id="imagen10"></div>
+                <div class="contenedorImagen" id="imagen11"></div>
+                <div class="contenedorImagen" id="imagen12"></div>
+            </div>
+            <div id="contenedorcocina">
+                <div class="contenedorImagen" id="imagen13"></div>
+                <div class="contenedorImagen" id="imagen14"></div>
+                <div class="contenedorImagen" id="imagen15"></div>
+                <div class="contenedorImagen" id="imagen16"></div>
+            </div>
+           </div>
+           
+      
+          
+       
+       
+    </div>
+   
+</div>
+<div class="cont-der">
+    
+    <p id="estado"></p>
+</div>
+
+
+        <div class="menu">
+                <input type="checkbox" id="btn-menu">
+                <div class="container-menu">
+                    <div class="cont-menu">
+                        <h1 class="titulo-autismoP">AUTISMO PLAN</h1>
+                        <nav>
+                            <a id="instruccionesboton" href="#">Instrucciones</a>
+                            <a id="perfilboton" href="#">Perfil</a>
+                            <a id="calificacionesboton" href="#">Calificaciones</a>
+                        </nav>
+                        <label for="btn-menu" id="btn-cerrar">✖️</label>
+                    </div>
+
+                    <div class="seccion-resultados" id="secinstrucciones" style="display: none;">
+                        <h1 class="titulo-menu">Instrucciones</h1>
+                        <p id="instrucciones">Para iniciar a jugar tendras que darle click al boton <b>"Iniciar juego"</b> que esta en el centro de la pantalla luego de eso veras inicia el temporizador y como se despliegan los 4 escenarios en los que podras agarrar objetos del contenedor situado en la izquierda y arrastrarlos en los <b>espacios marcados</b> dentro de cada escenario donde creas conveniente, <b>si esta correcto donde lo arrastraste subira la puntuacion de lo contrario no aumentara,</b> el juego terminara si el temporizador llega a 0 o si ya arrastraste todos los elementos disponibles, al haber terminado te saldra la puntuacion y te avisara si ganaste o perdiste y un boton para reiniciar el juego y volver a intentar una puntuacion mas alta, durante la ejecucion del juego lo puedes pausar lo que detendra el temporizador y lo podras reanudar cuando desees. </p>
+                        <img id="autismoplan-img" src="{% static 'core/img/home/Autismoplan.png' %}">
+                    </div>
+                    
+                    <!-- <div class="seccion-resultados" id="secperfil" style="display: none;">
+                            <h1 class="titulo-menu">Perfil</h1>
+                            {%if request.user.is_authenticated %}
+                            <P>Nombre: {{user.username}}</P>
+                            <p>Fecha en la que te uniste: {{user.date_joined}}</p>
+                            <a href="/agregardetalles/">¿Quieres agregar mas detalles sobre ti?</a>
+                            {% endif %}
+                           
+                    </div> -->
+                    <section class="seccion-resultados perfill" id="secperfil" style="display: none;" style="background-color: #f4f5f7;">
+                        <div class="container py-5 h-100">
+                          <div class="row d-flex justify-content-center align-items-center h-100" >
+                            <div class="col col-lg-6 mb-4 mb-lg-0 card-perfil">
+                              <div class="card mb-3" style="border-radius: .5rem;">
+                                <div class="row g-0">
+                                  <div class="col-md-4 gradient-custom text-center text-white"
+                                    style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                                    {%if request.user.is_authenticated %}
+                                    <img id="IMG-perfil" src="{{ perfil.fotoPerfil.url }}"
+                                      alt="Foto de perfil" class="img-fluid my-5" />
+                                    <h5 style="color: black;">{{user.username}}</h5>
+                                    <p style="color: #ccc;">Usuario</p>
+                                    <i class="far fa-edit mb-5"></i>
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body p-4">
+                                      <h6>Informacion</h6>
+                                      <hr class="mt-0 mb-4">
+                                      <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                          <h6>Email</h6>
+                                          <p class="text-muted">{{ perfil.emailPerfil }}</p>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                          <h6>Hobby</h6>
+                                          <p class="text-muted">{{ perfil.hobby }}</p>
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                          <h6>Comida Favorita</h6>
+                                          <p class="text-muted">{{ perfil.comidaFavorita }}</p>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                          <h6>Fecha en la que te uniste</h6>
+                                          <p class="text-muted">{{user.date_joined}}</p>
+                                        </div>
+                                      </div>
+                                      <div class="d-flex justify-content-start">
+                                        <a href="/agregardetalles/">¿Quieres agregar o editar mas detalles sobre ti?</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      {% endif %}
+                        
+                    
+
+                    <div class="seccion-resultados" id="secresultados">
+                            <h1 class="titulo-menu">Calificaciones</h1>
+                            <form method="GET" action="" class="mb-4">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="filtro" class="form-label">Filtrar por:</label>
+                                        <select name="filtro" id="filtro" class="form-select" onchange="this.form.submit()">
+                                            <option value="todos" {% if filtro_actual == 'todos' %}selected{% endif %}>Todos</option>
+                                            <option value="ganados" {% if filtro_actual == 'ganados' %}selected{% endif %}>Ganados</option>
+                                            <option value="perdidos" {% if filtro_actual == 'perdidos' %}selected{% endif %}>Perdidos</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Estado</th>
+                                        <th scope="col">Puntuacion</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for resultado in resultados %}
+                                    <tr>
+                                        <td>{{ resultado.id }}</td>
+                                        <td>{{ resultado.fecha_resul }}</td>
+                                        <td>{{ resultado.estado_resul }}</td>
+                                        <td>{{ resultado.puntu_resul }}</td>
+                                        
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <br>
+                            
+                            <div class="pagination">
+                                <span class="current">
+                                        
+                                    Pagina {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                                </span>
+                                <span class="step-links">
+                                    {% if page_obj.has_previous %}
+                                        <a href="?page=1{% if filtro_actual != 'todos' %}&filtro={{ filtro_actual }}{% endif %}" class="btn btn-primary" >&laquo; Primera Pagina</a>
+                                        <a href="?page={{ page_obj.previous_page_number }}{% if filtro_actual != 'todos' %}&filtro={{ filtro_actual }}{% endif %}" class="btn btn-primary">Anterior</a>
+                                    {% endif %}
+                    
+                                    
+                    
+                                    {% if page_obj.has_next %}
+                                        <a href="?page={{ page_obj.next_page_number }}{% if filtro_actual != 'todos' %}&filtro={{ filtro_actual }}{% endif %}" class="btn btn-primary">Siguiente</a>
+                                        <a href="?page={{ page_obj.paginator.num_pages }}{% if filtro_actual != 'todos' %}&filtro={{ filtro_actual }}{% endif %}" class="btn btn-primary">Ultima Página &raquo;</a>
+                                    {% endif %}
+                                </span>
+                            </div>
+                            
+                    </div>
+
+
+        </div>
+        
+    </div>
+
+        
+   
+    <script src="{% static 'core/js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'core/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'core/js/jquery.marquee.min.js' %}"></script>
+	<script src="{% static 'core/js/main.js' %}"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        document.getElementById('formResultado').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            fetch('/GuardarResultado/', {
+                method: 'POST',
+                body: new FormData(this)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Éxito',
+                        text: data.message,
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000, // 3 segundos
+                        onClose: () => {
+                            window.location.href = '/juego/';
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: data.message,
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000, // 3 segundos
+                        onClose: () => {
+                            window.location.href = '/juego/';
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Hubo un problema al procesar la solicitud',
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000, // 3 segundos
+                    onClose: () => {
+                        window.location.href = '/juego/';
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="{% static 'core\js\script.js' %}"></script>
+    <script src="{% static 'core\js\music.js' %}"></script>
+    <script src="{% static 'core\js\juego.js' %}"></script>
+</body>
+</html>

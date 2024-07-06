@@ -1,0 +1,386 @@
+.list {
+    margin: 20px;
+    border: 1px solid black;
+    width: 50px;
+}
+
+#kakak {
+    user-select: none; /* Deshabilitar la selección de texto y elementos */
+    -webkit-user-select: none; /* Para navegadores basados en WebKit */
+    -moz-user-select: none; /* Para navegadores basados en Gecko */
+    -ms-user-select: none; /* Para navegadores basados en Trident/Edge */
+    background-image: url(../img/home/paisaje.jpg);
+    background-position: top center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    margin: 20px;
+    border: 1px solid black;
+    width: 7%;
+   
+}
+
+.kjj{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+
+#right {
+        display: flex;
+        margin: 20px;
+        height: 550px;
+        border: 1px solid black;
+        width: 90%;
+    }
+    
+.right1, .right2 {
+        width: 100%; /* Ancho de cada columna */
+        height: 100%;
+        display: flex;
+        flex-direction: column; /* Columnas apiladas verticalmente */
+        justify-content: space-between; /* Espacio entre los contenedores internos */
+    }
+    
+#contenedorsala, #contenedorbaño, #contenedorhabitacion, #contenedorcocina {
+        border: 1px solid black;
+        width: 100%;
+        height: 50%; /* Cada contenedor interno ocupa el 48% del espacio vertical de su columna */
+        display: flex;
+        position: relative; /* Posicionamiento relativo para elementos absolutos internos */
+        
+    }
+    
+.contenedor{
+    margin-top: 14px;
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cont-izq{
+    display: flex;
+    gap: 20px;
+}
+
+.contenedorr {
+    display: flex;
+}
+
+
+
+/* #btn-invisible {
+    display: none;
+} */
+
+#contenedorsala {
+    background-image: url(../img/Sala/Sala.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#contenedorcocina {
+    background-image: url(../img/Cocina/Cocina.jpg);
+    background-size: cover;
+    
+}
+
+#contenedorbaño {
+    background-image: url(../img/Baño/Baño.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#contenedorhabitacion {
+    background-image: url(../img/Habitacion/habitacion.jpg);
+    background-size: contain;
+    background-position: center;
+   
+}
+
+
+.item {
+    width: 50px;
+}
+
+.contenedorImagen {
+    border: 2px solid black;
+    height: 80px;
+    width: 80px;
+    position: absolute; 
+}
+
+@media (min-width: 1366px) and (max-width: 1366px) {
+    #contenedorhabitacion {
+        background-image: url(../img/Habitacion/habitacion.jpg);
+        background-size: cover;
+       
+    }
+
+
+    #imagen1 {
+        top: 170px; 
+        left: 350px; 
+    }
+    
+    #imagen2 {
+        top: 175px; 
+        left: 110px; 
+    }
+    
+    
+    #imagen3{
+        top: 50px;
+        right: 190px;
+    }
+    
+    
+    #imagen4{
+        top: 175px;
+        left: 230px;
+    }
+    
+    #imagen5{
+        top: 135px;
+        left: 40px;
+        height: 100px;
+        width: 100px;
+        object-fit: contain;
+    }
+    
+    #imagen6{
+        top: 40px;
+        right: 90px;
+    }
+    
+    #imagen7{
+        top: 155px;
+        right: 40px;
+    }
+    
+    #imagen8{
+        top: 30px;
+        left: 80px;
+    }
+    
+    #imagen9{
+        height: 180px;
+        top: 70px;
+        left: 140px;
+    }
+    
+    #imagen10{
+        right: 120px;
+        bottom: 30px;
+    }
+    
+    #imagen11{
+        bottom: 20px;
+        left: 250px;
+    }
+    
+    #imagen12{
+        bottom: 120px;
+        left: 250px;
+    }
+    
+    #imagen13{
+        left: 40px;
+        bottom: 30px;
+        height: 150px;
+    }
+    
+    #imagen14{
+        top: 10px;
+        left: 20px;
+    }
+    
+    
+    #imagen15{
+        right: 20px;
+        bottom: 105px;
+    }
+    
+    #imagen16{
+        right: 200px;
+        bottom: 105px;
+    }
+}
+
+#imagen1 {
+    object-fit: cover !important;
+    top: 155px; 
+    left: 350px; 
+    width: 175px;
+    height: 111px;
+}
+
+#imagen2 {
+    top: 164px; 
+    left: 135px;
+    height: 90px; 
+}
+
+
+#imagen3{
+    top: 50px;
+    right: 190px;
+}
+
+
+
+#sofa,#sofa-grande,#cuadro{
+    object-fit: cover !important;
+}
+
+#imagen4{
+    object-fit: cover !important;
+    height: 100px;
+    top: 165px;
+    left: 268px;
+}
+
+#imagen5{
+    top: 144px;
+    left: 40px;
+    height: 120px;
+    width: 100px;
+    object-fit: contain;
+}
+
+#imagen6{
+    top: 40px;
+    right: 90px;
+}
+
+#imagen7{
+    top: 144px;
+    right: 40px;
+    height: 120px;
+    width: 120px;
+}
+
+#imagen8{
+    top: 30px;
+    left: 80px;
+}
+
+#imagen9{
+    height: 180px;
+    top: 50px;
+    left: 149px;
+}
+
+#imagen10{
+    right: 120px;
+    bottom: 30px;
+    height: 120px;
+    width: 120px;
+}
+
+#imagen11{
+    bottom: 50px;
+    left: 250px;
+}
+
+#imagen12{
+    bottom: 133px;
+    left: 250px;
+}
+
+#imagen13{
+    left: 40px;
+    bottom: 1px;
+    height: 150px;
+}
+
+#imagen14{
+    border-radius: 50%;
+    top: 10px;
+    left: 20px;
+}
+
+
+#imagen15{
+    right: 20px;
+    bottom: 80px;
+}
+
+#imagen16{
+    right: 200px;
+    bottom: 80px;
+}
+
+
+#armario{
+    object-fit: cover;
+}
+.item.ocupando {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Para ajustar la imagen dentro del contenedor sin distorsionar */
+}
+
+ 
+.lampara{
+    margin-top: 33px;
+    border-bottom: none;
+}
+
+
+button{
+    padding: 0;
+    height: 50px;
+}
+
+.cont-der{
+    margin: 0 auto;
+}
+
+
+.logout-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fbb710;;
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+    transition: background-color 0.3s;
+}
+
+
+
+#secresultados{
+    width: 65% !important;
+}
+/* CSS para destacar contenedores válidos */
+.contenedor-valido {
+    border: 2px solid #4CAF50;
+    
+}
+
+/* Animación de éxito */
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.elemento-correcto {
+    animation: pop 0.3s ease;
+    border: 2px solid #4CAF50;
+}
+
+
+.elemento-incorrecto {
+    animation: pop 0.3s ease;
+    border: 2px solid red;
+}

@@ -1,0 +1,32 @@
+.title-autismo{
+    color: #ffb320 !important; 
+    margin-bottom: 5px;
+}
+
+.menu-ul{
+    line-height: 2;
+}
+
+.bg-importante{
+    background-size: cover;
+    background-position: 50px;
+}
+
+.btn-irjuego{
+    line-height: 2;
+}
+
+
+.conf{
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+}
+
+.bg-1{
+    background-image: url(../img/home/autismo-en-ninos.jpg);
+}
+
+.bg-2{
+    background-image:url(../img/home/autism1.jpg) ;
+}

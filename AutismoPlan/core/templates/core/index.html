@@ -1,0 +1,218 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<title>Inicio</title>
+	
+
+
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item set-bg bg-1" data-setbg="{% static 'core/img/home/autismo-en-ninos.jpg' %}">
+				<div class="hs-text">
+					<div class="container">
+						<h2>Autismo<span>Plan</span></h2>
+						<p >Plataforma de aprendizaje educativo y que incluye un juego diseñada especificamente para niños con el transtorno del espectro autista</p>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item set-bg" data-setbg="{% static 'core/img/home/autism1.jpg' %}">
+				<div class="hs-text">
+					<div class="container">
+						<h2>¿Como <span>jugar</span>?</h2>
+						<p >Dale click al boton <span>"jugar"</span><br>Luego de esto podras ingresar si ya tienes un usuario o de lo contrario puedes crear un usuario para iniciar con la aventura</p><br><br> 
+						<a href="/juego/" class="site-btn">Jugar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	
+
+
+	
+	<section class="feature-section spad">
+		<div class="container">
+			<div class="row ">
+				<div class="col-lg-4 col-md-6 ">
+					<div class="feature-item set-bg" data-setbg="{% static 'core/img/home/autism1.jpg' %}">
+						<span class="cata strategy">FAQ</span>
+						<div class="fi-content text-white">
+							<h5><a href="#">¿Que es AutismoPlan?</a></h5>
+							<p>Es una herramienta interactiva destinada a mejorar la calidad de vida de las personas con Trastorno del Espectro Autista (TEA) al ayudarles a como organizar y llevar a cabo actividades diarias en el hogar de manera más efectiva y autónoma. </p>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item set-bg" data-setbg="{% static 'core/img/home/autism2.jpg' %}">
+						<span class="cata strategy">FAQ</span>
+						<div class="fi-content text-white">
+							<h5><a href="#">¿Como puedes usar la herramienta?</a></h5>
+							<p>¡Puedes empezar el aprendizaje en tu navegador solo dirigite al boton JUGAR! </p>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item set-bg" data-setbg="{% static 'core/img/home/autism3.jpg' %}">
+						<span class="cata strategy">FAQ</span>
+						<div class="fi-content text-white">
+							<h5><a href="#">¿Puedes jugarlo gratis?</a></h5>
+							<p>Claro que si solo dirigete a la pestaña jugar </p>
+							
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+
+
+	<section class="about-section spad set-bg" data-setbg="{% static 'core/img/home/descarga.jpg' %}">
+		<div class="container">
+			<div class="section-title">
+				<h2>Mas de AutismoPlan</h2>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 text-center mb-4">
+					<img src="{% static 'core/img/home/Autismoplan-removebg-preview.png' %}" alt="Acerca de AutismoPlan" class="img-fluid">
+				</div>
+				<div class="col-lg-8">
+					<h3>Profundizando en AutismoPlan</h3><br>
+					<p>Es una plataforma educativa diseñada específicamente para niños con Trastorno del Espectro Autista (TEA). Nuestro objetivo es ayudar a los niños a desarrollar habilidades de organización y autonomía en casa a través de un juego interactivo.</p>
+					<h3>Características principales:</h3><br>
+					<ul>
+						<li>Organización y planificación de actividades diarias.</li>
+						<li>Interfaz amigable y accesible para niños con TEA.</li>
+						<li>Juego diseñado con técnicas para ayudar al aprendizaje de niños con TEA.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="recent-game-section spad set-bg" data-setbg="">
+		<div class="container">
+			<div class="section-title">
+				
+				<h2>Secciones de la casa que estan en el juego</h2>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="recent-game-item">
+						<div class="rgi-thumb set-bg" data-setbg="{% static 'core/img/home/habitacion.avif' %}">
+							<div class="cata new">Seccion</div>
+						</div>
+						<div class="rgi-content">
+							<h5>Habitacion</h5>
+							<p>Aca podras encontrar objetos comunes de una habitacion. </p>
+						
+							<div class="rgi-extra">
+								
+							</div>
+						</div>
+					</div>	
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="recent-game-item">
+						<div class="rgi-thumb set-bg" data-setbg="{% static 'core/img/home/baño.avif' %}">
+							<div class="cata racing">Seccion</div>
+						</div>
+						<div class="rgi-content">
+							<h5>Baño </h5>
+							<p>Aca podras encontrar objetos comunes de una habitacion. </p>
+							
+							<div class="rgi-extra">
+								
+							</div>
+						</div>
+					</div>	
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="recent-game-item">
+						<div class="rgi-thumb set-bg" data-setbg="{% static 'core/img/home/cocina.avif' %}">
+							<div class="cata adventure">Seccion</div>
+						</div>
+						<div class="rgi-content">
+							<h5>Cocina</h5>
+							<p>Aca podras encontrar objetos comunes de una cocina </p>
+						
+							<div class="rgi-extra">
+							
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	
+	<section class="tournaments-section spad">
+		<center><div class="tournament-title">Novedades</div></center>
+		<br>
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-md-6">
+					<div class="tournament-item mb-4 mb-lg-0">
+						
+						<div class="ti-content">
+							<div class="ti-thumb set-bg nov" data-setbg="{% static 'core/img/home/detalles.png' %}""></div>
+							<div class="ti-text">
+								<h4>Ahora puedes agregarle mas detalles a tu cuenta</h4>
+								<ul>
+									<li>Tales como tu foto, tu biografia o incluso tu hobbie!</li>
+								</ul>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-6">
+					<div class="tournament-item">
+						
+						<div class="ti-content">
+							<div class="ti-thumb set-bg nov" data-setbg="{% static 'core/img/home/Filtrar.png' %}"></div>
+							<div class="ti-text">
+								<h4>Ahora puedes listar tus resultados </h4>
+								<ul>
+									<li>Por fecha o por estado</li>
+								</ul>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{% static 'core/js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'core/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'core/js/jquery.marquee.min.js' %}"></script>
+	<script src="{% static 'core/js/main.js' %}"></script>
+	{% endblock %}
+    </body>
+</html>

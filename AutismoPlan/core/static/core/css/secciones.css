@@ -1,0 +1,270 @@
+body{
+    background-image:  url('/static/core/img/home/r.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: linear-gradient(to bottom, #6c3483, #58d68d); */
+    margin: 0;
+    padding: 0;
+    font-family: 'Gabarito', sans-serif;
+    height: 100vh;
+    -webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+/* Preloder */
+#preloder {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	background: #fbb710;
+}
+
+.loader {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -13px;
+	margin-left: -13px;
+	border-radius: 60px;
+	animation: loader 0.8s linear infinite;
+	-webkit-animation: loader 0.8s linear infinite;
+}
+
+@keyframes loader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+		border: 4px solid #673ab7;
+		border-left-color: transparent;
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+}
+
+@-webkit-keyframes loader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		border: 4px solid #673ab7;
+		border-left-color: transparent;
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+}
+
+.unique{
+  margin-top: 25px;
+}
+
+.formulario-inicio, .seccion-registro{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    width: 400px;
+    
+    background: white;
+    border-radius: 10px;
+}
+.instructivo-form{
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+}
+.titulo-form{
+    background: #fbb710;
+    /* background: linear-gradient(150deg, #6c3483, #58d68d); */
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid silver;
+    margin: 0px;
+    border-radius: 10px;
+}
+
+.formulario{
+    padding: 0px 40px 20px 40px;
+
+
+}
+
+.inputs-container{
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.input:focus {
+    border-color: transparent; /* Hace que el borde sea transparente cuando el input está enfocado */
+}
+
+.titulo-label{
+    text-align: center;
+    padding: 20px;
+}
+
+.registrarse{
+    text-align: center;
+    padding-top: 20px; 
+}
+
+.link-registro,.link-inicio{
+    color: gray;
+}
+
+.next-btn{
+    display: block;
+    margin: 0 auto;
+    margin-top:20px;
+    padding: 5px 10px;
+    background: #fbb710;
+    /* background: linear-gradient(150deg, #6c3483, #58d68d); */
+    border-radius: 20px;
+    font-family: 'Gabarito', sans-serif;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+}
+
+.contenedor-botones{
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.home-link{
+    text-decoration: none;
+    color: black;
+  
+
+}
+.boton-musica {
+   
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fbb710;; /* Color del botón cuando la música está apagada */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+  }
+  
+  .boton-musica.musica-encendida {
+    background-color: #FF0000; /* Color del botón cuando la música está encendida */
+  }
+  
+  .boton-musica:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: url('/static/core/img/home/sound-on.png') no-repeat center center;
+    background-size: cover;
+    transform: translate(-50%, -50%);
+  }
+  
+  .boton-musica.musica-encendida:before {
+    background: url('/static/core/img/home/music.png') no-repeat center center;
+    background-size: cover;
+  }
+
+
+  .home-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #fbb710;;
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      transition: background-color 0.3s;
+  }
+
+  .home-link:hover {
+      background-color: #45a049;
+  }
+
+  .home-link i {
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+      margin-right: 8px; 
+  }
+
+
+.next-btn {
+    background: #fff; /* color de fondo */
+  color: #4741d7; /* color de fuente */
+  border: 2px solid #fbb710; /* tamaño y color de borde */
+  padding: 16px 20px;
+  border-radius: 3px; /* redondear bordes */
+  position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    margin: 15px 105px;
+  }
+  .next-btn:before, .next-btn:after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: -50%;
+    background-color: #4741d7; /* color de fondo hover */
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .next-btn:after {
+    left: 100%;
+  }
+  .next-btn:hover {
+    color: #fff; /* color de fuente hover */
+  }
+  .next-btn:hover:before {
+    left: 0;
+  }
+  .next-btn:hover:after {
+    left: 50%;
+  }
+
+

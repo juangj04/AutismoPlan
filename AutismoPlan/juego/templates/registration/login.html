@@ -1,0 +1,51 @@
+{% extends 'juego/botones.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core\css\secciones.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="preloder">
+		<div class="loader"></div>
+	</div>
+    
+    <div class="formulario-inicio">
+        <h1 class="titulo-form">AutismoPlan</h1>
+        <form action="/signin/" class="formulario" id="form-inicio" method="post" >{% csrf_token %}
+            <div class="inputs-container">
+                <label class="titulo-label" for="user">¿Como te llamas?</label>
+                <input class="input" id="user" name="username" type="text" required>
+                
+                
+            </div>
+            <div class="inputs-container">
+                <label  class="titulo-label" for="contraseña">¿Cual es tu palabra favorita?</label>
+                <input class="input" id="contraseña" name="password" type="password" required >
+                
+            <p>{{error}}</p>    
+            </div>
+            <div class="registrarse">
+                Quiero hacer el <a href="/registro/" class="link-registro" id="linkregistro"  data-seccion="seccionRegistro">registro</a>
+            </div>
+            <button type="submit" class="next-btn" data-seccion="seccionInicioJuego" id="continuar-btn" >Continuar</button>
+        </form>
+    </div>
+    <script src="{% static 'core\js\script.js' %}"></script>
+    <script src="{% static 'core\js\music.js' %}"></script>
+    <script src="{% static 'core/js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'core/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'core/js/jquery.marquee.min.js' %}"></script>
+	<script src="{% static 'core/js/main.js' %}"></script>
+    {% endblock %}
+</body>
+</html>
